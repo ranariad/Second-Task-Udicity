@@ -1,0 +1,109 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #CCC
+}
+
+
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: beige;
+	
+}
+.controll-panal{
+	width: 345px;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.controll-panal .star{
+	list-style: none;
+}
+
+.controll-panal .star li {
+	float: left;
+	margin-right: 5px;
+}
+
+.controll-panal .moves{
+	margin-left: 20px;
+}
+
+.controll-panal #timer{
+    margin-left: 20px;
+}
+
+
+
+.controll-panal .restart{
+	float: right;
+	cursor: pointer;
+	
+}
+
+.memory-game{
+	width: 640px;
+	min-height:640px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 3em;
+	perspective: 1000px;
+	grid-column: 1 / -1;
+	padding: 32px;
+}
+
+.memory-card{
+	
+	width: 125px;
+	height: 125px ;
+	margin: 5px;
+	cursor: pointer;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
+	
+}
+
+.memory-card:active{
+	transform: scale(0.96);
+	transition: transform 0.2s;
+}
+
+.memory-card.flip{
+	transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face{
+	width: 100%;
+	height: 100%;
+	padding: 30px;
+	position: absolute;
+	border-radius: 5px;
+	background-color:cadetblue;
+	backface-visibility: hidden;
+	
+}
+
+.front-face{
+	transform: rotateY(180deg);
+}
+
